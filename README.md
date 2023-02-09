@@ -1,3 +1,5 @@
+
+
 # PyScAT
 
 ### PyScAT – отладчик, позволяющий подключить платы с микросхемами AVR к среде Atmel Studio
@@ -15,7 +17,7 @@
 Все не управляющие потоки (то есть те, которые не модифицируют содержание регистров/ячеек памяти виртуальной платы МК AVR контекста ATbackend) между Atmel  Studio  и ATbackend происходят в автоматическом режиме. Однако при передаче некоторых запросов, которые касаются контекста МК AVR происходит прерывание потоков автоматической приёмо-передачи, и PyScAT начинает общение с Atmel  Studio  и ATbackend в отдельности, синхронизируя тем самым контексты реальной платы МК AVR  с контекстами виртуальных плат Atmel  Studio  и ATbackend. 
 
 
-![Принцип работы PyScAT](https://drive.google.com/file/d/18qe_pBqCh-ggrB5AItDVBxYgQUZgyQr-/view?usp=share_link)
+![Принцип работы PyScAT](README/Принцип.png)
 ## Запуск PyScAT
 
 ### Первоначальная настройка
@@ -40,12 +42,12 @@
 -- Порт atmel studio
 -- Порт atbackend
 
-![Программа PyScAT.exe](https://drive.google.com/file/d/18qe_pBqCh-ggrB5AItDVBxYgQUZgyQr-/view?usp=sharing)
+![Программа PyScAT.exe](README/Настройка PyScAT.png)
 #### Параметры Atmel Studio
 Перед запуском отладчика требуется провести первоначальную настройку в среде Atmel  Studio.
 В меню настроек сверху в приложении нужно зайти в меню настроек отладчика **Tools>Options>Debugger>Backend  Agent**. Далее выставить параметры **а, б, в, г** так как это указано на рисунке ниже
 
-![Параметры Atmel Studio](https://drive.google.com/file/d/1zGB-LkdZjCdx_reJ-eo7cDSFyK_W3MEu/view?usp=share_link)
+![Параметры Atmel Studio](README/Настройка atbackend.png)
 При этом, в случае Atmel Studio 7.0, среда будет **зависать**. Это происходит из-за постоянного поиска отладчика. Дело в том, что сам отладчик PyScAT в это время ещё **не подключён** к Atmel Studio. Его стоит подключать **только** после проведения всех настроек в PyScAT и Atmel Studio.
 
 
